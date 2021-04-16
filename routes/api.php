@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ChatController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -32,6 +33,15 @@ Route::group(['middleware' => 'auth:api'], function () {
             ['data' => 'Test api response']);
     });
 
+    Route::get('/chat', function () {
+        return response()->success('Chat successful.',
+            ['data' => 'Chat response']);
+    });
+
+    Route::get('/chat/rooms', [ChatController::class, 'rooms']);
+    Route::get('/chat/rooms/{roomId}/messages', [ChatController::class, 'messages']);
+    Route::post('/chat/rooms/{roomId}/message', [ChatController::class, 'newMessages']);
+    
 });
 
 Route::post('login', 'AuthController@login');
