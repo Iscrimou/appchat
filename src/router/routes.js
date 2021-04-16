@@ -24,6 +24,17 @@ const routes = [
     children: [{ path: '', component: () => import('pages/AutocompleteSample/Autocomplete.vue') }]
   },
   {
+    path: '/component-chat',
+    component: () => import('layouts/MyLayout.vue'),
+    children: [{
+      path: '',
+      meta: {
+        title: 'Chat Example'
+      },
+      component: () => import('pages/Chat/Chat.vue')
+    }]
+  },
+  {
     path: '/component-samples',
     component: () => import('layouts/MyLayout.vue'),
     children: [{

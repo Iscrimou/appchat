@@ -82,6 +82,20 @@
         <q-item-label caption>This is just a drill.</q-item-label>
       </q-item-section>
     </q-item>
+
+    <q-item-label header>Chat Example</q-item-label>
+    <q-item
+      clickable
+      to="/component-chat"
+    >
+      <q-item-section avatar>
+        <q-icon name="chat" />
+      </q-item-section>
+      <q-item-section>
+        <q-item-label>Chat Example</q-item-label>
+        <q-item-label caption>Chat example laravel quasar</q-item-label>
+      </q-item-section>
+    </q-item>
   </div>
 </template>
 
